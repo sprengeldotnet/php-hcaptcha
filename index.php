@@ -24,8 +24,7 @@ if(isset($_POST["submit"])){
   curl_setopt($ch, CURLOPT_URL, 'https://hcaptcha.com/siteverify'); //Set Verify URL
   curl_setopt($ch, CURLOPT_POSTFIELDS, $data);  //Set the Data to Post
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); //do not output, use variable
-  $response = curl_exec($ch); //store the content in variable
-  $json_response = json_decode($response, true);  //decode the response
+  $json_response = json_decode(curl_exec($ch), true);  //decode and store the response
   curl_close($ch);  //close curl
   
   if ($response['success']){ 
