@@ -35,7 +35,7 @@ if(isset($_POST["submit"])){
     
     // do stuff
     
-  } else{
+  } else {
   //if response is not true ( {"success":false,[...]} )
     
     print("Please verify the captcha to continue");
